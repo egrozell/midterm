@@ -67,11 +67,48 @@ def main():
                [ 0,-1, 3,-2],
                [ 0, 0,-2, 2],
            ],
-           dtype=np.uint16,
+           dtype=float,
        )
-    k_invert = np.invert(a)
-    print(k_invert)
+    a_norm=np.linalg.norm(a)
+    b = np.array(
+           [
 
+               [ .5,.5, 0.5, 0.5],
+               [.5, 3/2,3/2, 3/2],
+               [ .5,3/2,5/2,5/2],
+               [ 1/2, 3/2,5/2, 3],
+           ],
+           dtype=float,
+       )
+    b_norm=np.linalg.norm(b)
+    cn= a_norm*b_norm
+    print(cn)
+
+    c = np.array(
+           [
+
+               [0,0,0,1],
+               [0,0,1,0],
+               [0,1,0,0],
+               [1,0,0,0],
+           ],
+           dtype=float,
+       )
+    c_norm=np.linalg.norm(c)
+    d = np.array(
+           [
+
+               [1,0,0,0],
+               [0,1,0,0],
+               [0,0,1,0],
+               [0,0,0,1],
+
+           ],
+           dtype=float,
+       )
+    d_norm=np.linalg.norm(d)
+    cn1= c_norm*d_norm
+    print(cn1)
 
 if __name__ == "__main__":
     main()
